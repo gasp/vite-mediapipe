@@ -9,4 +9,4 @@
 `yarn dev` or `npm run dev`
 
 
-![demo](https://github.com/gasp/vite-mediapipe-ts/blob/main/public/facedetect.gif?raw=true)
+![demo](https://github.com/gasp/vite-mediapipe/blob/main/public/facedetect.gif?raw=true)
