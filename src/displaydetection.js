@@ -1,15 +1,12 @@
-import { Detection } from "@mediapipe/tasks-vision";
-
-let video = document.getElementById("webcam")!;
-const liveView = document.getElementById("liveView")!;
+let video = document.getElementById("webcam");
+const liveView = document.getElementById("liveView");
 
 // Keep a reference of all the child elements we create
-// so we can remove them easilly on each render.
-var children: HTMLElement[] = [];
+// so we can remove them easily on each render.
+var children = [];
 
-export function displayVideoDetections(detections: Detection[]) {
+export function displayVideoDetections(detections) {
   // Remove any highlighting from previous frame.
-
   for (let child of children) {
     liveView.removeChild(child);
   }
@@ -29,7 +26,7 @@ export function displayVideoDetections(detections: Detection[]) {
       p.style.width = `${width - 10}px`;
       p.style.height = "20px";
 
-      highlighter.style.left = `${video.offsetWidth- width - originX}px`;
+      highlighter.style.left = `${video.offsetWidth - width - originX}px`;
       highlighter.style.top = `${originY}px`;
       highlighter.style.width = `${width}px`;
       highlighter.style.height = `${height}px`;
@@ -41,7 +38,7 @@ export function displayVideoDetections(detections: Detection[]) {
     children.push(highlighter);
     children.push(p);
     for (let keypoint of detection.keypoints) {
-      const keypointEl = document.createElement("spam");
+      const keypointEl = document.createElement("span");
       keypointEl.className = "key-point";
       keypointEl.style.top = `${keypoint.y * video.offsetHeight - 3}px`;
       keypointEl.style.left = `${

@@ -1,4 +1,4 @@
-# vite + mediapipe + typescript boilerplate
+# vite + mediapipe boilerplate
 
 ## install
 

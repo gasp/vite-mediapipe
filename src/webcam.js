@@ -1,12 +1,11 @@
 import { FaceDetector, FilesetResolver } from "@mediapipe/tasks-vision";
 import { displayVideoDetections } from "./displaydetection";
 
-let faceDetector: FaceDetector;
+let faceDetector;
 let runningMode = "IMAGE";
 
-const video = document.querySelector<HTMLVideoElement>("#webcam")!;
-const enableWebcamButton =
-  document.querySelector<HTMLButtonElement>("#webcamButton")!;
+const video = document.querySelector("#webcam");
+const enableWebcamButton = document.querySelector("#webcamButton");
 
 const initializefaceDetector = async () => {
   const vision = await FilesetResolver.forVisionTasks(
